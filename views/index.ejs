@@ -1,21 +1,32 @@
 <div class="row">
-  <div class="col s12 m9">
+  <div class="test">
+  <div class="col s12 m8">
     <div id="map"></div>
   </div>
+  </div>
+  <div class="col s12 m4" id="searchbar">
+      <div class="options-box">
+          <div>
+            <input id="places-search" type="text" placeholder="Search">
+            <input id="go-places" class="btn blue-grey darken-2" type="button" value="Search" />
+          </div>
+          <div class="switch">
+              <label for "switch">Show nearby bus stops</label></br>
+              <label>
+                <input type="checkbox">
+                <span class="lever"></span>
+              </label>
+            </div>
+            <div class="results-box">
+                <p>Date installed:</p><br>
+                <p>Finish:</p><br>
+                <p>Width:</p><br>
+                <p>Condition:</p><br>
+              </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-  <div class="col s12 m3">
-    <div class="options-box">
-      <h3>Where do you want to go?</h3>
-      <div>
-        <span class="text">Search for nearby places:</span>
-        <input id="places-search" type="text" placeholder="Ex: Bus Stops near Seattle" />
-        <input id="go-places" class="btn blue-grey darken-2" type="button" value="Search" />
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
   // var map;
