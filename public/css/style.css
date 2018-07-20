@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('/fonts/SkinandBones.ttf');
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -7,15 +7,41 @@ body {
   flex-direction: column;
 }
 
-.brand-logo {
-  margin-left: 1em;
-}
-
 #map {
-  height: 900px;
+  height: 1000px;
   width: auto;
+  /* position: absolute; */
+}
+
+.btn {
+  float: right;
+}
+
+#searchbar {
+  /* margin-right: 3em; */
+  height: 100vh;
 
 }
+
+.switch {
+  bottom: 0;
+  right: 0;
+}
+
+.results-box {
+  height: 500px;
+  width: auto;
+  padding-top: 3em;
+}
+
+.navbar {
+  background-color: #12849A;
+}
+
+.options-box {
+  
+}
+
 /* .options-box {
   background: #fff;
   border: 1px solid #999;
@@ -26,10 +52,17 @@ body {
   text-align: center;
   margin-top: 1em;
 } */
+
 #pano {
   width: 200px;
 }
 
 .page-footer {
   align-content: center;
+}
+
+.brand-pic {
+  height: 4em;
+  width: auto;
+  padding-top: 4px;
 }
