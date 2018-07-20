@@ -5,22 +5,22 @@
   <div class="col s12 m4" id="searchbar">
     <div class="options-box">
       <div>
-        <input id="search-input" type="text" placeholder="Destination">
-        <input id="go-places" class="search-btn" type="button" value="Search" />
+        <input id="places-search" type="text" placeholder="Search">
+        <input id="go-places" class="btn blue-grey darken-2" type="button" value="Search" />
       </div>
-      <form action="#">
-          <p>
-            <label>
-              <input type="checkbox" />
-              <span>Show Nearby Bus Stops</span>
-            </label>
-          </p>
-        </form>
+      <div class="switch">
+        <label for "switch">Show nearby bus stops</label>
+        </br>
+        <label>
+          <input type="checkbox">
+          <span class="lever"></span>
+        </label>
       </div>
       <div class="results-box">
-        <h4>Bike Parking</h4>
+        <h4>Bike Rack Results</h4>
         <% results.forEach(function(rack) { %>
-          <img class="pin-icon" src="/img/pin.png"><%= rack.unitdesc %></br></br>
+          <%= rack.unitdesc %>
+            <%= rack.latitude, rack.longitude %>
               <% console.log(rack) %>
                 <% }); %>
       </div>

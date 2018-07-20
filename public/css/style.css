@@ -13,32 +13,14 @@ body {
   /* position: absolute; */
 }
 
-#search-input {
-  height: 4em;
-  width: 12em;
-  font-size: 16px;
-  border: solid black 1px;
-  text-align: left;
-}
-
-.search-btn {
-  background-color: #E7453C;
-  color: white;
-  font-size: 16px;
-  height: 4.4em;
-  width: 6em;
-  margin-left: 2em;
-  text-align: center;
-  
-}
-
 .btn {
   float: right;
 }
 
-.pin-icon {
-  height: 3em;
-  width: auto;
+#searchbar {
+  /* margin-right: 3em; */
+  height: 100vh;
+
 }
 
 .switch {
@@ -49,7 +31,7 @@ body {
 .results-box {
   height: 500px;
   width: auto;
-  padding-top: 1em;
+  padding-top: 3em;
 }
 
 .navbar {
@@ -57,9 +39,19 @@ body {
 }
 
 .options-box {
-  padding-top: 2em;
-  margin-left: 2em;
+  
 }
+
+/* .options-box {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  height: 100%;
+  line-height: 35px;
+  padding: 10px 10px 30px 10px;
+  text-align: center;
+  margin-top: 1em;
+} */
 
 #pano {
   width: 200px;
