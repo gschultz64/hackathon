@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+  <header>
+      <nav class="blue-grey lighten-1">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Bike Racks</a>
+          <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/auth/signup">Sign Up</a></li>           
+            <li><a href="/auth/login">Log In</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul id="mobile-menu" class="sidenav">
+        <li><a href="/auth/signup">Sign Up</a></li>           
+        <li><a href="/auth/login">Log In</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="container">
+      <!--<%- JSON.stringify(currentUser) %>-->
+      <% include partials/alerts %>
+      <%- body %>
+      </div>
+    </main>
+    <!--<footer class="page-footer blue-grey lighten-1">
+      <div class="footer-copyright">
+        <div class="row">
+          &copy; 2018
+        </div>
+      </div>
+    </footer>-->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  </body>
+</html>
