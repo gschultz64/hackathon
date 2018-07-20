@@ -2,10 +2,7 @@ require('dotenv').config();
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
-var session = require('express-session');
-var passport = require('./config/passportConfig');
-var isLoggedIn = require('./middleware/isLoggedIn');
-var flash = require('connect-flash');
+
 var request = require('request');
 
 var app = express();
@@ -18,14 +15,20 @@ app.use(express.static(__dirname + '/public'));
 app.use(ejsLayouts);
 
 app.get('/', function (req, res) {
-  res.render('index');
+  request('https://data.seattle.gov/resource/fxh3-tqdm.json', function(error, response, body) {
+    var results = JSON.parse(body);
+    console.log(JSON.stringify(results));
+    res.render('index', { results: results });
+  });
 });
 
 app.get('/search', (req, res) => {
   res.render('search');
 });
 
-app.use('/auth', require('./controllers/auth'));
+
+
+// app.use('/auth', require('./controllers/auth'));
 
 var server = app.listen(process.env.PORT || 3000);
 

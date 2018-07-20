@@ -11,7 +11,6 @@ body {
   height: 1000px;
   width: auto;
   /* position: absolute; */
-
 }
 
 .btn {
@@ -37,6 +36,10 @@ body {
 
 .navbar {
   background-color: #12849A;
+}
+
+.options-box {
+  
 }
 
 /* .options-box {
