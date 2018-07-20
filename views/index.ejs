@@ -1,3 +1,94 @@
-<h1>Hello! This is the home page.</h1>
-<p>more text</p>
+<div class="row">
+  <div class="col s12 m9">
+    <div id="map"></div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col s12 m3">
+    <div class="options-box">
+      <h3>Where do you want to go?</h3>
+      <div>
+        <span class="text">Search for nearby places:</span>
+        <input id="places-search" type="text" placeholder="Ex: Bus Stops near Seattle" />
+        <input id="go-places" class="btn blue-grey darken-2" type="button" value="Search" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // var map;
+  // var markers = [];
+  // var locations = [
+
+  // ];
+  // var placeMarkers = [];
+
+  function initMap() {
+    // The location of Uluru
+    var uluru = { lat: -25.344, lng: 131.036 };
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 4, center: uluru });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({ position: uluru, map: map });
+
+
+    // Constructor creates a new map - only center and zoom are required
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //   center: { lat: 47.6076641, lng: -122.3355026 },
+    //   zoom: 10,
+    //   mapTypeControl: false
+    // });
+
+    // Style the markers a bit. This will be our listing marker icon.
+    // var defaultIcon = makeMarkerIcon('663399');
+    // Create a "highlighted location" marker color for when the user
+    // mouses over the marker.
+    // var highlightedIcon = makeMarkerIcon('00e2e2');
+
+    // for (var i = 0; i < locations.length; i++) {
+    //   // Get the position from the location array.
+    //   var position = locations[i].location;
+    //   var title = locations[i].title;
+    //   // Create a marker per location, and put into markers array.
+    //   var marker = new google.maps.Marker({
+    //     position: position,
+    //     title: title,
+    //     animation: google.maps.Animation.DROP,
+    //     icon: defaultIcon,
+    //     id: i
+    //   });
+    //   // Push the marker to our array of markers.
+    //   markers.push(marker);
+    //   // Create an onclick event to open an infowindow at each marker.
+    //   marker.addListener('click', function () {
+    //     populateInfoWindow(this, largeInfowindow);
+    //   });
+    //   // Two event listeners - one for mouseover, one for mouseout,
+    //   // to change the colors back and forth.
+    //   marker.addListener('mouseover', function () {
+    //     this.setIcon(highlightedIcon);
+    //   });
+    //   marker.addListener('mouseout', function () {
+    //     this.setIcon(defaultIcon);
+    //   });
+    // }
+
+    // Search box to execute a places search
+    // var searchBox = new google.maps.places.SearchBox(
+    //   document.getElementById('places-search'));
+    // // Bias the search box to within the bounds of the map
+    // searchBox.setBounds(map.getBounds());
+
+    // var largeInfoWindow = new google.maps.InfoWindow();
+    // // Listen for the event fired when the user selects a prediction and clicks "Go"
+    // // more details for that place.
+    // document.getElementById('go-places').addEventListener('click', textSearchPlaces);
+  }
+
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.KEY %>&libraries=places&v=3&callback=initMap">
+</script>

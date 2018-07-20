@@ -2,8 +2,35 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .brand-logo {
   margin-left: 1em;
+}
+
+#map {
+  height: 1000px;
+  width: 500px;
+  /* position: absolute; */
+
+}
+.options-box {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  height: 100%;
+  line-height: 35px;
+  padding: 10px 10px 30px 10px;
+  text-align: center;
+  margin-top: 1em;
+}
+#pano {
+  width: 200px;
+}
+
+.page-footer {
+  align-content: center;
 }
