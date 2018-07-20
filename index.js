@@ -17,9 +17,9 @@ app.use(ejsLayouts);
 app.get('/', function (req, res) {
   request('https://data.seattle.gov/resource/fxh3-tqdm.json', function(error, response, body) {
     var results = JSON.parse(body);
-    console.log(results);
+    console.log(JSON.stringify(results));
+    res.render('index', { results: results });
   });
-  res.render('index');
 });
 
 app.get('/search', (req, res) => {
