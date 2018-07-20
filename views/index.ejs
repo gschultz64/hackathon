@@ -30,17 +30,39 @@
   <script>
     var map;
     var markers = [];
-    var locations = [];
     var placeMarkers = [];
 
     function initMap() {
-
+      
       // Constructor creates a new map - only center and zoom are required
       map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 47.6076641, lng: -122.3355026 },
         zoom: 11,
         mapTypeControl: false
       });
+
+      var locations = [
+      {title: "RAVENNA AVE NE 0630 BLOCK W SIDE ( 298) 36 FT S/O NE 65TH ST",
+        location: {lat: 47.6756, lng: -122.3039}}, 
+      {title: "E MADISON ST 0140 BLOCK SE SIDE (  39) 39 FT NE/O 14TH AVE",
+        location: {lat: 47.6139,lng: -122.314}},
+      {title: "E MADISON ST 0140 BLOCK SE SIDE (  76) 31 FT SW/O E PIKE ST", location:{lat: 47.614,
+        lng: -122.3138}},
+      {title: "BROOKLYN AVE NE 0380 BLOCK E SIDE ( 523) 62 FT S/O NE 40TH ST", location: {lat: 47.6551,
+        lng: -122.3143}},
+      {title: "BROOKLYN AVE NE 0450 BLOCK E SIDE ( 200) 200 FT N/O NE 45TH ST", location: {lat: 47.6619,
+        lng: -122.3141}},
+      {title: "BROOKLYN AVE NE 0500 BLOCK W SIDE ( 466) 34 FT S/O NE 52ND ST", location:{lat: 47.6663,
+        lng: -122.3143}},
+      {title: "E REPUBLICAN ST 0145 BLOCK S SIDE ( 204) 17 FT W/O 15TH S AVE E", location: {lat: 47.6231,
+        lng: -122.3128}},
+      {title: "MERIDIAN AVE N 0330 BLOCK E SIDE (  82) 82 FT N/O N NORTHLAKE WAY", location: {lat: 47.6471,
+        lng: -122.3339}},
+      {title: "MERIDIAN AVE N 0330 BLOCK E SIDE ( 358) 41 FT S/O N 34TH ST", location:{lat: 47.6479,
+        lng: -122.3338}}
+    ];
+
+      var largeInfoWindow = new google.maps.InfoWindow();
 
       // Style the markers a bit. This will be our listing marker icon.
       var defaultIcon = makeMarkerIcon('e7453c');
@@ -53,6 +75,8 @@
         var position = locations[i].location;
         var title = locations[i].title;
         // Create a marker per location, and put into markers array.
+        console.log(position)
+        console.log(title)
         var marker = new google.maps.Marker({
           position: position,
           title: title,
@@ -62,6 +86,7 @@
         });
         // Push the marker to our array of markers.
         markers.push(marker);
+        console.log(markers)
         // Create an onclick event to open an infowindow at each marker.
         marker.addListener('click', function () {
           populateInfoWindow(this, largeInfowindow);
@@ -82,7 +107,7 @@
       // Bias the search box to within the bounds of the map
       searchBox.setBounds(map.getBounds());
 
-      var largeInfoWindow = new google.maps.InfoWindow();
+      
       // Listen for the event fired when the user selects a prediction and clicks "Go"
       // more details for that place.
       document.getElementById('go-places').addEventListener('click', textSearchPlaces);
