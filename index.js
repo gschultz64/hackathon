@@ -2,9 +2,6 @@ require('dotenv').config();
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
-var session = require('express-session');
-var passport = require('./config/passportConfig');
-var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
 
 var app = express();
@@ -16,19 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(ejsLayouts);
 
-// This needs to come before you app.use passport
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true
-}));
-
 // Setup flash messages
 app.use(flash());
-
-// This must come after the session setup
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Attach the current user to the response for all routes
 // Also, attach the flash messages
@@ -41,10 +27,6 @@ app.use(function (req, res, next) {
 app.get('/', function (req, res) {
   res.render('index');
 });
-
-// app.get('/profile', isLoggedIn, function (req, res) {
-//   res.render('profile');
-// });
 
 app.get('/search', (req, res) => {
   res.render('search');
